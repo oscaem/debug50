@@ -5,10 +5,14 @@ sg.theme('graygraygray')  # set theme for pysimplegui
 
 font = ("Press Start 2P", 12)
 
+img = sg.Image("gui/assets/idle.png", key='IMAGE')
+txt = sg.Text(key='TEXT', pad=(10, 2))
+btn = sg.Button("Speak", key='SPEAK', pad=(10, 10), border_width=0, size=(8, 1))
+
 layout = [
-    [sg.Image("gui/assets/idle.png", key='IMAGE')],
-    [sg.Text(key='TEXT')],
-    [sg.Button("Speak", key='SPEAK')]
+    [sg.Column([[img]], justification='center')],
+    [sg.Column([[txt]])],
+    [sg.Column([[btn]], justification='center')],
 ]
 
 window = sg.Window('Mein Freund', layout, font=font)  # initialize single window for pysimplegui

@@ -1,16 +1,27 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+import gui.gui as gui, input.input as input, inference.inference as inference, output.output as output
+# handles: gui, input, inference, output
+from gui.states import set_state, State
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+while True:
+    event, values = gui.window.read(timeout=100)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    gui.update()
+
+    if event == gui.sg.WIN_CLOSED:
+        break
+
+    if event == 'SPEAK':
+        set_state(State.LISTEN)
+        gui.update()
+        text = input.listen()
+        set_state(State.THINK)
+        gui.update()
+        response = inference.infer(text)
+        set_state(State.SPEAK)
+        gui.update()
+        output.say(response)
+        set_state(State.IDLE)
+        gui.update()
+
+gui.window.close()

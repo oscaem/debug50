@@ -4,7 +4,6 @@ from elevenlabs import generate, play, set_api_key
 from config.settings import eleven_key
 from ui.states import State, set_state
 
-
 if eleven_key:  # confirm whether ELEVEN LABS key was provided, if not fallback to local solution
     set_api_key(eleven_key)
 else:
@@ -14,9 +13,6 @@ else:
 
 def generate_speech(text):
     if eleven_key:
-        engine.say(text)
-        engine.runAndWait()
-    else:
         audio = generate(
             text=text,
             voice="Gigi",
@@ -24,8 +20,12 @@ def generate_speech(text):
         )
         play(audio)
 
+    else:
+        engine.say(text)
+        engine.runAndWait()
 
-def say(output_text):  # @input: str, output: bytes(stream) - performs text-to-speech operation on a given text
+
+def say(output_text):  # performs text-to-speech operation on a given text
     try:
         set_state(State.SPEAK)
         print(output_text)

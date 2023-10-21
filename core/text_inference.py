@@ -16,7 +16,7 @@ messages = [
 ]  # set up message structure and system prompt
 
 
-def respond(input_text):  # @input: str, @output: str, - performs completion on a given text
+def respond(input_text):  # performs completion on a given text
     try:
         set_state(State.THINK)
         print("AI is thinking..")

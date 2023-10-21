@@ -10,5 +10,5 @@ def talk():  # main dialogue chain, optionally pass a gui object
         voice_output.say(response)  # synthesize voice output
 
 
-def clear_history():
+def clear_history():  # clear the chat history, resetting memory of AI
     text_inference.clear()

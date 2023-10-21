@@ -23,8 +23,8 @@ jedi==0.19.1
 Jinja2==3.1.2
 jsonpatch==1.33
 jsonpointer==2.4
-langchain==0.0.319
-langsmith==0.0.48
+langchain==0.0.320
+langsmith==0.0.49
 llvmlite==0.41.1
 MarkupSafe==2.1.3
 marshmallow==3.20.1
@@ -74,7 +74,6 @@ pyobjc-framework-BusinessChat==9.0.1
 pyobjc-framework-CalendarStore==9.0.1
 pyobjc-framework-CallKit==9.0.1
 pyobjc-framework-CFNetwork==9.0.1
-pyobjc-framework-Cinematic==10.0
 pyobjc-framework-ClassKit==9.0.1
 pyobjc-framework-CloudKit==9.0.1
 pyobjc-framework-Cocoa==9.0.1
@@ -126,15 +125,12 @@ pyobjc-framework-InstallerPlugins==9.0.1
 pyobjc-framework-InstantMessage==9.0.1
 pyobjc-framework-Intents==9.0.1
 pyobjc-framework-IntentsUI==9.0.1
-pyobjc-framework-IOBluetooth==10.0
-pyobjc-framework-IOBluetoothUI==10.0
 pyobjc-framework-IOSurface==9.0.1
 pyobjc-framework-iTunesLibrary==9.0.1
 pyobjc-framework-KernelManagement==9.0.1
 pyobjc-framework-LatentSemanticMapping==9.0.1
 pyobjc-framework-LaunchServices==9.0.1
 pyobjc-framework-libdispatch==9.0.1
-pyobjc-framework-libxpc==10.0
 pyobjc-framework-LinkPresentation==9.0.1
 pyobjc-framework-LocalAuthentication==9.0.1
 pyobjc-framework-LocalAuthenticationEmbeddedUI==9.0.1
@@ -163,7 +159,6 @@ pyobjc-framework-OSAKit==9.0.1
 pyobjc-framework-OSLog==9.0.1
 pyobjc-framework-PassKit==9.0.1
 pyobjc-framework-PencilKit==9.0.1
-pyobjc-framework-PHASE==10.0
 pyobjc-framework-Photos==9.0.1
 pyobjc-framework-PhotosUI==9.0.1
 pyobjc-framework-PreferencePanes==9.0.1
@@ -182,7 +177,6 @@ pyobjc-framework-SearchKit==9.0.1
 pyobjc-framework-Security==9.0.1
 pyobjc-framework-SecurityFoundation==9.0.1
 pyobjc-framework-SecurityInterface==9.0.1
-pyobjc-framework-SensitiveContentAnalysis==10.0
 pyobjc-framework-ServiceManagement==9.0.1
 pyobjc-framework-SharedWithYou==9.0.1
 pyobjc-framework-SharedWithYouCore==9.0.1
@@ -192,7 +186,6 @@ pyobjc-framework-SoundAnalysis==9.0.1
 pyobjc-framework-Speech==9.0.1
 pyobjc-framework-SpriteKit==9.0.1
 pyobjc-framework-StoreKit==9.0.1
-pyobjc-framework-Symbols==10.0
 pyobjc-framework-SyncServices==9.0.1
 pyobjc-framework-SystemConfiguration==9.0.1
 pyobjc-framework-SystemExtensions==9.0.1
@@ -226,5 +219,5 @@ typing-inspect==0.9.0
 typing_extensions==4.8.0
 urllib3==2.0.7
 wcwidth==0.2.8
-websockets==11.0.3
+websockets==12.0
 yarl==1.9.2

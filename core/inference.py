@@ -18,12 +18,16 @@ messages = [
 ]  # set up message structure and system prompt
 
 
-def infer(text):  # @input: str, @output: str, - performs completion on a given text
-    print("AI is thinking..")
+def infer(input_text):  # @input: str, @output: str, - performs completion on a given text
+    try:
+        print("AI is thinking..")
 
-    messages.append(HumanMessage(content=text))  # append Human Message to chat
+        messages.append(HumanMessage(content=input_text))  # append Human Message to chat
 
-    response = chat(messages=messages).content  # get response from AI
-    messages.append(AIMessage(content=response))  # append AI Message to chat
+        output_text = chat(messages=messages).content  # get response from AI
+        messages.append(AIMessage(content=output_text))  # append AI Message to chat
 
-    return response
+        return output_text
+
+    except Exception as e:
+        print("An error occured during text completion: " + e)

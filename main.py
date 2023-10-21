@@ -1,7 +1,5 @@
 import gui.gui as gui
-import input.input as input
-import inference.inference as inference
-import output.output as output
+from core import inference as inference, input as input, output as output
 
 from gui.states import set_state, State
 
@@ -16,7 +14,8 @@ def perform_dialogue():
     text = input.listen()  # listen for and transcribe voice input
 
     update_state(State.THINK)
-    response = inference.infer(text)  # infer answer from text input
+    if text:
+        response = inference.infer(text)  # infer answer from text input
 
     update_state(State.SPEAK)
     output.say(response)  # synthesize voice output

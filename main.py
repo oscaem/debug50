@@ -1,6 +1,27 @@
-import gui.gui as gui, input.input as input, inference.inference as inference, output.output as output
-# handles: gui, input, inference, output
+import gui.gui as gui
+import input.input as input
+import inference.inference as inference
+import output.output as output
+
 from gui.states import set_state, State
+
+
+def update_state(state):
+    set_state(state)
+    gui.update()
+
+
+def perform_dialogue():
+    update_state(State.LISTEN)
+    text = input.listen()  # listen for and transcribe voice input
+
+    update_state(State.THINK)
+    response = inference.infer(text)  # infer answer from text input
+
+    update_state(State.SPEAK)
+    output.say(response)  # synthesize voice output
+
+    update_state(State.IDLE)  # reset state to origin
 
 
 while True:
@@ -11,17 +32,7 @@ while True:
     if event == gui.sg.WIN_CLOSED:
         break
 
-    if event == 'SPEAK':
-        set_state(State.LISTEN)
-        gui.update()
-        text = input.listen()
-        set_state(State.THINK)
-        gui.update()
-        response = inference.infer(text)
-        set_state(State.SPEAK)
-        gui.update()
-        output.say(response)
-        set_state(State.IDLE)
-        gui.update()
+    if event == 'BUTTON':
+        perform_dialogue()
 
 gui.window.close()

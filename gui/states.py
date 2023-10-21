@@ -2,10 +2,10 @@ from enum import Enum
 
 
 class State(Enum):
-    IDLE = {'image': './gui/assets/idle.png', 'text': 'Waiting..'}
-    LISTEN = {'image': './gui/assets/listen.png', 'text': 'Listening..'}
-    THINK = {'image': './gui/assets/think.png', 'text': 'Thinking..'}
-    SPEAK = {'image': './gui/assets/speak.png', 'text': 'Speaking..'}
+    IDLE = {'image': '', 'text': 'SPEAK'}
+    LISTEN = {'image': '', 'text': 'LISTENING..'}
+    THINK = {'image': '', 'text': 'THINKING..'}
+    SPEAK = {'image': '', 'text': 'SPEAKING..'}
 
 
 current_state = State.IDLE  # initialize State to IDLE

@@ -1,25 +1,24 @@
-import os
-from dotenv import load_dotenv
-
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import (AIMessage, HumanMessage, SystemMessage)
 
-load_dotenv()  # load .env configuration
-api_key = os.getenv("OPENAI_API_KEY")  # set API keys
+from config.settings import openai_key
+from ui.states import State, set_state
 
-chat = ChatOpenAI(openai_api_key=api_key)  # configure chat object
+chat = ChatOpenAI(openai_api_key=openai_key)  # configure chat object
 
 messages = [
     SystemMessage(content="""
     You are helpful rubber duck debugger named Ducky. Quack, Quack. 
     You will help the user with rubber duck debugging. 
-    You will not have access to the codebase, so try asking insightful questions.
+    You will not have access to the codebase, so try working with the user.
+    Still, remember the user does not have much time, so be concise and give short answers.
     """)
 ]  # set up message structure and system prompt
 
 
-def infer(input_text):  # @input: str, @output: str, - performs completion on a given text
+def respond(input_text):  # @input: str, @output: str, - performs completion on a given text
     try:
+        set_state(State.THINK)
         print("AI is thinking..")
 
         messages.append(HumanMessage(content=input_text))  # append Human Message to chat
@@ -30,4 +29,9 @@ def infer(input_text):  # @input: str, @output: str, - performs completion on a 
         return output_text
 
     except Exception as e:
-        print("An error occured during text completion: " + e)
+        print("An error occured during text completion: " + str(e))
+
+
+def clear():
+    del messages[1:]
+    print("Deleted chat history")

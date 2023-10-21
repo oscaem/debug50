@@ -18,3 +18,4 @@ def get_state():
 def set_state(new_state):
     global current_state
     current_state = new_state
+    return current_state

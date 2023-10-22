@@ -1,11 +1,12 @@
 import speech_recognition as sr
 
-from ui.states import State, set_state
+from ui.states import State, update_state
 
 
 def listen():  # performs speech recognition (whisper) for a single cycle
     try:
-        set_state(State.LISTEN)
+        update_state(State.LISTEN)  # set corresponding State flag for action
+
         r = sr.Recognizer()
         with sr.Microphone() as source:
             print("Listening..")

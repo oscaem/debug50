@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-from ui.states import get_state, set_state
 
 sg.theme('graygraygray')  # set theme for pysimplegui
 
@@ -24,9 +23,3 @@ layout = [
 
 window = sg.Window('', layout, finalize=True)  # initialize main window
 
-
-def update_ui(state):  # updates the visual state of the GUI
-    new_state = set_state(state)
-
-    window['BUTTON'].update(new_state.value['text'])
-    window.refresh()

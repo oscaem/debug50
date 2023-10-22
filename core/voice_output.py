@@ -2,7 +2,7 @@ import pyttsx3
 from elevenlabs import generate, play, set_api_key
 
 from config.settings import eleven_key
-from ui.states import State, set_state
+from ui.states import State, update_state
 
 if eleven_key:  # confirm whether ELEVEN LABS key was provided, if not fallback to local solution
     set_api_key(eleven_key)
@@ -27,10 +27,12 @@ def generate_speech(text):
 
 def say(output_text):  # performs text-to-speech operation on a given text
     try:
-        set_state(State.SPEAK)
+        update_state(State.SPEAK)  # set corresponding State flag for action
+
         print(output_text)
-        generate_speech(output_text)
-        set_state(State.IDLE)
+        generate_speech(output_text)  # synthesize text to audio
+
+        update_state(State.IDLE)  # reset State flag for action
 
     except Exception as e:
         print("An error occured during speech synthesis: " + str(e))

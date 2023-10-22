@@ -15,6 +15,4 @@ while True:
     if event in ('Clear History'):
         dialogue.clear_history()
 
-    gui.update_ui(get_state())
-
 gui.window.close()

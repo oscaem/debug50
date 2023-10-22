@@ -1,8 +1,11 @@
 # CS50 Final Project: Rubber Duck Debugger
 
-Hello there and welcome to my final project for CS50 Computer Science 2023 course! This project is a GUI application that is inspired by the concept of 'Rubber Duck Debugging'. If you have ever tried to explain your code to an inanimate object and found that the solution magically unfolded itself, you know exactly what I'm talking about.
+Hello there and welcome to my final project for CS50 Computer Science 2023 course! This project is a GUI application that is inspired by the concept of 'Rubber Duck Debugging'. If you have ever tried to explain your code to an inanimate object and found that the solution magically unfolded itself, you know exactly what I'm talking about. It was also inspired by CS50's very own duck debugger, integrated into their codespace. 
 
 The application aims to make the process of debugging a bit more enjoyable and interactive, by providing you with an AI-powered rubber duck! You can talk to the duck about your code and the AI will attempt to provide you with debugging suggestions. The whole experience is designed to be immersive and engaging, hopefully making those tough debugging sessions a bit more bearable.
+
+<img width="949" alt="Bildschirmfoto 2023-10-22 um 12 52 44" src="https://github.com/oscaem/debug50/assets/48035650/3e038ac3-3539-4604-b7f8-1240e1e623d7">
+
 
 # How it Works
 The GUI is built with PySimpleGUI library. When you interact with the application by clicking the "Speak" button, a chain of processes gets initiated. Here's the flow:

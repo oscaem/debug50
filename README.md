@@ -4,6 +4,7 @@ Hello there and welcome to my final project for CS50 Computer Science 2023 cours
 
 The application aims to make the process of debugging a bit more enjoyable and interactive, by providing you with an AI-powered rubber duck! You can talk to the duck about your code and the AI will attempt to provide you with debugging suggestions. The whole experience is designed to be immersive and engaging, hopefully making those tough debugging sessions a bit more bearable.
 
+Video Demo: https://youtu.be/Qafp-aZ0LE0
 <img width="949" alt="Bildschirmfoto 2023-10-22 um 12 52 44" src="https://github.com/oscaem/debug50/assets/48035650/3e038ac3-3539-4604-b7f8-1240e1e623d7">
 
 

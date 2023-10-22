@@ -39,7 +39,7 @@ To start using the software, you'll need to:
 
 1. Clone the repository.
 2. pip install all the required external libraries from `pip install -r requirements.txt`.
-3. Create a `.env` file with your OpenAI_API_KEY which is a requirement. You can find more information on this here: https://platform.openai.com/docs/quickstart.
+3. Create a `.env` file with your `OPENAI_API_KEY` which is a requirement. You can find more information on this here: https://platform.openai.com/docs/quickstart. I provided a `.env.example` file for reference, but it might be hidden depending on your coding environment.
 4. Optionally, you can also provide an `ELEVEN_API_KEY` from elevenlabs.io, a text-to-speech provider. More information on this can be found here: https://docs.elevenlabs.io/api-reference/quick-start/introduction.
 
 # Conclusion
